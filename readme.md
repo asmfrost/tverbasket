@@ -8,7 +8,7 @@ $ npm install -g grunt-cli
 ```
 
 ```bash
-$ git clone git@github.com:asmfrost/tverbasket.git
+$ git clone https://github.com/asmfrost/tverbasket.git
 $ cd tverbasket
 $ npm install
 $ grunt bower:install
