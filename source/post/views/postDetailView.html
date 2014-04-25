@@ -1,0 +1,15 @@
+<article id="postDetailView">
+<h1 ng-bind="post.title">?</h1>
+
+<div class="post">
+
+    <span class="date" ng-bind="post.creation_date.slice(0,10) | date:'dd MMMM yyyy' + ' года'">?</span>
+    <div class="text"><p ng-bind-html="post.text">?</p></div>
+
+    <span class="image" ng-repeat="image in post.img">
+      <img ng-src="{{image}}" />
+    </span>
+
+</div>
+
+</article>

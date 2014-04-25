@@ -1,0 +1,44 @@
+{
+  "name": "blueprint",
+  "version": "0.0.4",
+  "devDependencies": {
+    "jquery-1.11.0": "http://code.jquery.com/jquery-1.11.0.min.js",
+    "angular": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "angular-resource": "~1.2.16",
+    "angular-sanitize": "~1.2.16",
+    "angular-latest": "~1.2.16",
+    "html5shiv": "latest",
+    "json3": "latest",
+    "reset-css": "latest"
+  },
+  "exportsOverride": {
+    "jquery-1.11.0": {
+      "jquery": "index.js"
+    },
+    "angular": {
+      "angular": "angular.min.js{,map}"
+    },
+    "angular-route": {
+      "angular-route": "angular-route.min.js{,map}"
+    },
+    "angular-resource": {
+      "angular-resource": "angular-resource.min.js{,map}"
+    },
+    "angular-sanitize": {
+      "angular-sanitize": "angular-sanitize.min.js{,map}"
+    },
+    "angular-latest": {
+      "angular-locale": "src/ngLocale/angular-locale_ru-ru.js"
+    },
+    "html5shiv": {
+      "html5shiv": "dist/html5shiv-printshiv.min.js"
+    },
+    "json3": {
+      "json3": "lib/json3.min.js"
+    },
+    "reset-css": {
+      "reset-css": "reset.css"
+    }
+  }
+}

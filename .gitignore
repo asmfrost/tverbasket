@@ -1,0 +1,9 @@
+# Игнорируем следующие директории
+[Bb]uild/
+[Rr]elease/
+.idea/*
+nbproject/*
+.htaccess
+node_modules/*
+bower_components/*
+vendors/*

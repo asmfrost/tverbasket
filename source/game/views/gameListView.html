@@ -1,0 +1,11 @@
+<article id="gameListView">
+  <h1>Прошедшие игры</h1>
+
+  <table ng-repeat="game in games | orderBy:'game_date':true">
+    <tr><th colspan="7" ng-bind="'Игра от ' + (game.game_date.slice(0,10) | date:'dd MMMM yyyy') + ' года'">?</th></tr>
+    <tr>
+      <td><img src="{{game.team_1_img}}" /></td><td ng-bind="game.team_1_name">?</td><td ng-bind="game.team_1_score">?</td><td>:</td><td ng-bind="game.team_2_score">?</td> <td ng-bind="game.team_2_name">?</td><td><img src="{{game.team_2_img}}" /></td>
+    </tr>
+  </table>
+
+</article>

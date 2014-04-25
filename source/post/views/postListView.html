@@ -1,0 +1,23 @@
+<article id="postListView">
+  <h1>Новости за {{ year }} год</h1>
+
+  <div class="searchblock">
+    <input type="text" size="92" ng-model="findText">
+    <span>{{(findText.length > 0) ? 'найдено новостей: ' + (filteredPostsList | filter: {creation_date: year}).length : 'введите текст новости для поиска'}}</span>
+  </div>
+  <div class="yearsblock">
+    <span>за другие года: <a href="" ng-click="setYear(2011)">2011</a>
+    <a href="" ng-click="setYear(2012)">2012</a>
+    <a href="" ng-click="setYear(2013)">2013</a>
+    <a href="" ng-click="setYear(2014)">2014</a></span>
+  </div>
+
+  <div class="post" ng-repeat="post in (filteredPostsList = (postsList | filter:findText)) | filter: {creation_date: year} | orderBy:'creation_date':true">
+      <h2><a ng-href="#/post/{{post.id}}" ng-bind="post.title"></a></h2>
+      <span class="date" ng-bind="post.creation_date.slice(0,10) | date:'longDate'"></span>
+      <div class="text"><img class="post-thumb" ng-src="{{post.img[0]}}" ng-show="{{ (post.img[0] ? true : false) }}">
+      <p ng-bind-html="(post.text.length > 900) ? post.text.slice(0, 900) + '...' :  post.text"></p></div>
+  </div>
+
+  <p class="notFound" ng-hide="filteredPostsList.length">По Вашему запросу новостей не найдено</p>
+</article>

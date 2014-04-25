@@ -1,0 +1,157 @@
+/**
+* Основные стили разметки приложения tverbasket находятся в этом файле
+*
+* Стили модулей, включаемых в данные приложения идут в своих собственных .less
+* файлах.
+*
+* @version 0.0.4
+* @package tverbasket
+*/
+@import "common";
+
+/**
+* Стили для body и главного контейнера контента
+*
+* @section body
+*/
+body {
+  background: url('../assets/tverbasket/background.jpg') center top repeat-y;
+}
+
+/**
+* Основной контейнер для вывода всего содержимого сайта
+*
+* @subsection main-container
+*/
+.main-container {
+  background-color: @light-background;
+  display: block;
+  margin: 0 auto;
+  width: @content-width;
+}
+
+/**
+* Шапка приложения
+*
+* @section header
+*/
+header {
+  .bl-left;
+
+  height: 174px;
+
+  width: @content-width;
+}
+
+/**
+* Разметка логотипа
+*
+* @subsection sitelogo
+*/
+#sitelogo {
+  .bl-left;
+
+  img {
+    margin: 20px;
+  }
+}
+
+/**
+* Разметка заголовка для сайта
+*
+* @subsection site-title
+*/
+#site-title {
+  .bl-left;
+
+  width: 851px;
+
+  dl {
+    dt {
+      .headers-font;
+      color: @blue;
+      font-size: 40px;
+      font-weight: 700;
+      margin-top: 55px;
+      text-align: center;
+      text-transform: uppercase;
+
+      em {
+        color: @orange;
+      }
+    }
+
+    dd {
+      .text-font;
+      color: @gray;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+}
+
+/**
+* Разметка главного меню
+*
+* @section nav
+*/
+@navmenu-height: 60px;
+
+nav {
+  background-color: @blue;
+  clear: both;
+  .bl-left;
+
+  font-size: 20px;
+
+  height: @navmenu-height;
+  width: @content-width;
+
+  a {
+    .bl-left;
+    .headers-font;
+    color: #fff;
+    height: @navmenu-height - 20px;
+    margin-top: 20px;
+    text-align: center;
+    width: 204px;
+
+    &:link, &:visited {
+      text-decoration: none;
+    }
+    &:hover, &:active {
+      text-decoration: underline;
+    }
+  }
+}
+
+/**
+* Контейнер для вывода данных от основных модулей приложения
+*
+* @section page-content
+*/
+#page-content {
+  clear: both;
+  display: block;
+  width: @content-width;
+}
+
+/**
+* Подвал приложения
+*
+* @section footer
+*/
+footer {
+  clear: both;
+  .bl-left;
+  color: #fff;
+  background-color: @blue;
+  height: 65px;
+  width: @content-width;
+
+  p {
+    .text-font;
+    margin-top: 25px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,170 @@
+/**
+* Стили разметки модуля новостей
+*
+* @version 0.0.4
+* @package tverbasket
+* @subpackage post
+*/
+@import "../../css/common";
+
+/**
+* Стили для отображения списка новостей
+*
+* @section postListView
+*/
+#postListView {
+  @postMainIndent: 20px;
+
+  padding: @postMainIndent;
+  overflow: hidden;
+
+  h1 {
+    .headers-font;
+    color: @blue;
+    font-size: 30px;
+    font-weight: 700;
+    width: @content-width - @postMainIndent * 2;
+  }
+
+  .searchblock {
+    .bl-left;
+    .text-font;
+    font-size: 16px;
+    height: 60px;
+    margin-top: 10px;
+    width: @content-width - @postMainIndent - 400px;
+
+    input {
+      height: 25px;
+    }
+
+    span {
+      color: lighten(@gray, 60%);
+      font-size: 12px;
+      margin-left: 5px;
+    }
+  }
+
+  .yearsblock {
+    .bl-left;
+    .text-font;
+    font-size: 16px;
+    height: 60px;
+    margin-top: 10px;
+    text-align: right;
+    width: 400px - @postMainIndent;
+
+    a {
+      &:link, &:visited {
+        color: @blue;
+        text-decoration: none;
+      }
+
+      &:hover, &:active {
+        color: @orange;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .post {
+    clear: both;
+    display: block;
+    margin-bottom: 30px;
+
+    h2 {
+      .headers-font;
+      font-size: 20px;
+      font-weight: 700;
+
+      a {
+        &:link, &:visited {
+          color: @blue;
+          text-decoration: none;
+        }
+
+        &:hover, &:active {
+          color: @orange;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .date {
+      display: block;
+      color: @gray;
+      .text-font;
+      font-size: 10px;
+      margin: 5px 0;
+    }
+
+    .text {
+      .text-font;
+      font-size: 16px;
+
+      img {
+        .bl-left;
+        width: 200px;
+        margin: 0 10px 10px 0;
+      }
+    }
+  }
+
+  .notFound {
+    .text-font;
+    font-size: 16px;
+  }
+}
+
+/**
+* Стили для отображения одной новости
+*
+* @section postDetailView
+*/
+#postDetailView {
+  @postMainIndent: 20px;
+
+  padding: @postMainIndent;
+
+  h1 {
+    .headers-font;
+    color: @blue;
+    font-size: 20px;
+    font-weight: 700;
+    width: @content-width - @postMainIndent * 2;
+  }
+
+  .post {
+    clear: both;
+    display: block;
+    margin-bottom: 30px;
+
+    .date {
+      display: block;
+      color: @gray;
+      .text-font;
+      font-size: 10px;
+      margin: 5px 0;
+    }
+
+    .text {
+      .text-font;
+      font-size: 16px;
+      text-align: justify;
+    }
+
+    .image {
+      display: block;
+      width: @content-width - @postMainIndent * 2;
+      text-align: center;
+      img {
+        width: 600px;
+        margin: 20px auto;
+      }
+    }
+  }
+
+}
+
+
+

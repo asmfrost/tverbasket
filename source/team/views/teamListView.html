@@ -1,0 +1,8 @@
+<article id="teamListView">
+<h1>Команды лиги</h1>
+
+<div ng-repeat="team in teams | orderBy:'team_name':false">
+  <img ng-src="{{team.img[0]}}" ng-show="{{ (team.img[0] ? true : false) }}">
+  <p ng-bind="team.team_name"></p>
+</div>
+</article>

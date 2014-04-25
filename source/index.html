@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta lang="ru">
+  <title>Multimodule AngularJS WebApplication</title>
+  <% if (config.environment && config.environment === 'release') { %>
+  <!--[if lte IE 8]> <script src="shiv.json.min.js"></script> <![endif]-->
+  <link rel="stylesheet" href="css/styles.min.css" />
+  <% } else { %>
+  <!--[if lte IE 8]> <script src="vendors/html5shiv/html5shiv-printshiv.min.js"></script> <![endif]-->
+  <!--[if lte IE 8]> <script src="vendors/json3/json3.min.js"></script> <![endif]-->
+  <link href="vendors/reset-css/reset.css" rel="stylesheet" media="screen">
+  <link href="css/tverbasket.css" rel="stylesheet" media="screen">
+  <link href="post/css/post.css" rel="stylesheet" media="screen">
+  <link href="season/css/season.css" rel="stylesheet" media="screen">
+  <link href="game/css/game.css" rel="stylesheet" media="screen">
+  <link href="team/css/team.css" rel="stylesheet" media="screen">
+  <link href="mainpage/css/mainpage.css" rel="stylesheet" media="screen">
+  <% } %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="main-container">
+  <header>
+
+    <div id="sitelogo">
+      <a href="#/"><img src="assets/tverbasket/site_logo.png"></a>
+    </div>
+
+    <div id="site-title">
+      <dl>
+        <dt>Тверская <em>баскетбольная</em> лига</dt>
+        <dd>тестовое задание для русбитех</dd>
+      </dl>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#/">Главная</a>
+    <a href="#/post">Новости</a>
+    <a href="#/season">Сезон 2013-2014</a>
+    <a href="#/game">Игры</a>
+    <a href="#/team">Команды</a>
+  </nav>
+
+
+  <main id="page-content" ng-view>
+  </main>
+
+  <footer>
+    <p>Лицензии. Авторские права. Прочая информация.</p>
+  </footer>
+
+  <% if (config.environment && config.environment === 'release') { %>
+
+  <script type="text/javascript" src="js/app.min.js"></script>
+
+  <% } else { %>
+
+  <script type="text/javascript" src="vendors/jquery/index.js"></script>
+
+  <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
+  <script type="text/javascript" src="vendors/angular-locale/angular-locale_ru-ru.js"></script>
+  <script type="text/javascript" src="vendors/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="vendors/angular-sanitize/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="vendors/angular-resource/angular-resource.min.js"></script>
+
+  <script type="text/javascript" src="post/post.js"></script>
+  <script type="text/javascript" src="post/services/postServices.js"></script>
+  <script type="text/javascript" src="post/services/postDetailSrvc.js"></script>
+  <script type="text/javascript" src="post/services/postListSrvc.js"></script>
+  <script type="text/javascript" src="post/services/postLoadSrvc.js"></script>
+  <script type="text/javascript" src="post/directives/postDirectives.js"></script>
+  <script type="text/javascript" src="post/directives/postLoadingDrct.js"></script>
+  <script type="text/javascript" src="post/directives/postFocusDrct.js"></script>
+  <script type="text/javascript" src="post/filters/postFilters.js"></script>
+  <script type="text/javascript" src="post/filters/postYearFltr.js"></script>
+  <script type="text/javascript" src="post/controllers/postControllers.js"></script>
+  <script type="text/javascript" src="post/controllers/postListCtrl.js"></script>
+  <script type="text/javascript" src="post/controllers/postViewCtrl.js"></script>
+
+  <script type="text/javascript" src="team/team.js"></script>
+  <script type="text/javascript" src="team/services/teamServices.js"></script>
+  <script type="text/javascript" src="team/services/teamListSrvc.js"></script>
+  <script type="text/javascript" src="team/controllers/teamControllers.js"></script>
+  <script type="text/javascript" src="team/controllers/teamListCtrl.js"></script>
+
+  <script type="text/javascript" src="game/game.js"></script>
+  <script type="text/javascript" src="game/services/gameServices.js"></script>
+  <script type="text/javascript" src="game/services/gameListSrvc.js"></script>
+  <script type="text/javascript" src="game/controllers/gameControllers.js"></script>
+  <script type="text/javascript" src="game/controllers/gameListCtrl.js"></script>
+  <script type="text/javascript" src="game/game.js"></script>
+
+
+  <script type="text/javascript" src="season/season.js"></script>
+  <script type="text/javascript" src="season/controllers/seasonControllers.js"></script>
+  <script type="text/javascript" src="season/controllers/seasonViewCtrl.js"></script>
+
+  <script type="text/javascript" src="mainpage/directives/mainpageDirectives.js"></script>
+  <script type="text/javascript" src="mainpage/directives/mainpageGameDrct.js"></script>
+  <script type="text/javascript" src="mainpage/mainpage.js"></script>
+  <script type="text/javascript" src="mainpage/directives/mainpageDirectives.js"></script>
+  <script type="text/javascript" src="mainpage/controllers/mainpageMainCtrl.js"></script>
+
+  <script type="text/javascript" src="tverbasket.js"></script>
+
+  <% } %>
+
+  <script type="text/javascript">
+    angular.element(document).ready(function() {
+      angular.bootstrap(document, ['tverbasket']);
+    });
+  </script>
+  </div>
+</body>
+</html>

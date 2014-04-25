@@ -1,0 +1,48 @@
+/**
+* Стили разметки модуля команд
+*
+* @version 0.0.4
+* @package tverbasket
+* @subpackage teams
+*/
+@import "../../css/common";
+
+/**
+* Стили для отображения списка команд
+*
+* @section teamListView
+*/
+#teamListView {
+  @teamsMainIndent: 20px;
+
+  padding: @teamsMainIndent;
+  overflow: hidden;
+
+  h1 {
+    .headers-font;
+    color: @blue;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  div {
+    .bl-left;
+    width: 246px;
+    margin-bottom: 25px;
+
+    img {
+      width: 206px;
+      height: 206px;
+      margin: 20px;
+    }
+
+    p {
+      .text-font;
+      color: @blue;
+      font-size: 16px;
+      font-weight: 700;
+      width: 246px;
+      text-align: center;
+    }
+  }
+}

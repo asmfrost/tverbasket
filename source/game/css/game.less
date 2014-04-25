@@ -1,0 +1,84 @@
+/**
+* Стили разметки модуля игр
+*
+* @version 0.0.4
+* @package tverbasket
+* @subpackage games
+*/
+@import "../../css/common";
+
+/**
+* Стили для отображения списка игр
+*
+* @section gameListView
+*/
+#gameListView {
+  @gamesMainIndent: 20px;
+
+  padding: @gamesMainIndent;
+
+  h1 {
+    .headers-font;
+    color: @blue;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  table {
+    width: @content-width - @gamesMainIndent;
+
+    tr {
+      th {
+        .headers-font;
+        color: @gray;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 20px 0 10px 0;
+      }
+    }
+
+    tr {
+      td:first-child {
+        img {
+          width: 100px;
+        }
+      }
+
+      td {
+        .text-font;
+        width: 157px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      td:nth-child(3) {
+        .headers-font;
+        color: @orange;
+        font-size: 40px;
+        font-weight: 700;
+        text-align: right;
+      }
+
+      td:nth-child(5) {
+        .headers-font;
+        color: @orange;
+        font-size: 40px;
+        font-weight: 700;
+        text-align: left;
+      }
+
+      td:nth-child(2), td:nth-child(6) {
+        .headers-font;
+        color: @blue;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      td:last-child {
+        img {
+          width: 100px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<article id="mainpageView">
+
+  <div id="newsView">
+    <h1>Новости</h1>
+    <div ng-repeat="post in posts | orderBy:'creation_date':true | limitTo:5">
+        <h3><a ng-href="#/post/{{post.id}}" ng-bind="post.title"></a></h3>
+        <span ng-bind="post.creation_date.slice(0,10) | date:'longDate'"></span>
+        <div class="text">
+        <img ng-src="{{post.img[0]}}" ng-show="{{ (post.img[0] ? true : false) }}">
+        <p ng-bind-html="(post.text.length > 900) ? post.text.slice(0, 900) + '...' :  post.text"></p></div>
+    </div>
+  </div>
+
+  <div id="gamesView">
+    <h2>Прошедшие игры</h2>
+
+    <div ng-repeat="game in games | orderBy:'game_date':true | limitTo:10">
+      <h3 ng-bind="'Игра от ' + (game.game_date.slice(0,10) | date:'dd MMMM yyyy') + ' года'">?</h3>
+      <img src="{{game.team_1_img}}" />
+      <span ng-bind="game.team_1_name">?</span>
+      <span ng-bind="game.team_1_score">?</span>
+      <span>:</span>
+      <span ng-bind="game.team_2_score">?</span>
+      <span ng-bind="game.team_2_name">?</span>
+      <img src="{{game.team_2_img}}" />
+    </div>
+  </div>
+
+</article>
